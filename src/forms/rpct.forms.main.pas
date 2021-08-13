@@ -45,6 +45,14 @@ Function GetJSONErrorString(ErrorCode:integer):string;
 var
   frmMain: TfrmMain;
 
+resourcestring
+  rsMethodTest =
+    'test is the basic request, to check connectivity. testok is received when everithing is ok';
+  rsMethodGetAddressBalance =
+    'getaddressbalance returns: balance,incoming,outgoing of the specified addresses';
+  rsMethodGetOrderData =
+    'getorderinfo returns: timestamp,block,receiver,amount,concept of the specified order';
+
 implementation
 
 {$R *.lfm}
@@ -53,74 +61,53 @@ implementation
 
 // change tge method combobox
 procedure TfrmMain.cbMethodChange(Sender: TObject);
-begin
-  case cbMethod.ItemIndex of
-    0:begin  // test
-      memHelp.Text:='test is the basic request, to check connectivity. testok is received when everithing is ok';
-      edtParams.Visible:=false;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-      end;
-    1:begin  // getaddressbalance
-      memHelp.Text:='getaddressbalance returns: balance,incoming,outgoing of the specified addresses';
-      edtParams.TextHint:= 'Params';
-      edtParams.Visible:=true;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-      end;
-    2:begin  // getorderdata
-      memHelp.Text := 'getorderinfo returns: timestamp,block,receiver,amount,concept of the specified order';
-      edtParams.TextHint:= 'Params';
-      edtParams.Visible:=true;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-      end;
-    3:begin  // getblockinfo
-      edtParams.TextHint:= 'Params';
-      edtParams.Visible:=true;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-      end;
-    4:begin  // getmininginfo
-      edtParams.Visible:=true;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-      end;
-    5:begin  // getpendingorders
-      edtParams.Visible:=true;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-      end;
-    6:begin  // getmainnetinfo
-      edtParams.Visible:=true;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-      end;
-    7:begin  // getblockorders
-      edtParams.TextHint:= 'Params';
-      edtParams.Visible:=true;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-      end;
-    8:begin  // getnewaddress
-      edtParams.TextHint:= 'Params';
-      edtParams.Visible:=true;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-      end;
-    9:begin // sendfunds
-      edtParams.TextHint:= 'Recipient';
-      edtParams.Visible:=true;
-      edtAmount.Visible:=true;
-      edtReference.Visible:=true;
-      end;
-    otherwise
-      edtParams.TextHint:= 'Params';
-      edtParams.Visible:=false;
-      edtAmount.Visible:=false;
-      edtReference.Visible:=false;
-  end;
+Begin
+edtParams.Text:= '';
+edtParams.TextHint:= 'Params';
+edtParams.Visible:=false;
+edtAmount.Visible:=false;
+edtReference.Visible:=false;
+
+case cbMethod.ItemIndex of
+  0:begin  // test
+    memHelp.Text:= rsMethodTest;
+    end;
+  1:begin  // getaddressbalance
+    memHelp.Text:= rsMethodGetAddressBalance;
+    edtParams.TextHint:= 'Params';
+    edtParams.Visible:=true;
+    end;
+  2:begin  // getorderdata
+    memHelp.Text := rsMethodGetOrderData;
+    edtParams.TextHint:= 'Params';
+    edtParams.Visible:=true;
+    end;
+  3:begin  // getblockinfo
+    edtParams.TextHint:= 'Params';
+    edtParams.Visible:=true;
+    end;
+  4:begin  // getmininginfo
+    end;
+  5:begin  // getpendingorders
+    end;
+  6:begin  // getmainnetinfo
+    end;
+  7:begin  // getblockorders
+    edtParams.TextHint:= 'Params';
+    edtParams.Visible:=true;
+    end;
+  8:begin  // getnewaddress
+    edtParams.TextHint:= 'Params';
+    edtParams.Visible:=true;
+    end;
+  9:begin // sendfunds
+    edtParams.TextHint:= 'Recipient';
+    edtParams.Visible:=true;
+    edtAmount.Visible:=true;
+    edtReference.Visible:=true;
+    end;
 end;
+End;
 
 // Returns a valid JSON ID using timestamp
 function GetValidID():integer;
