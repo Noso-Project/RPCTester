@@ -49,6 +49,7 @@ var
 
 const
   cDefaultServerAddress = 'localhost';
+  cVersion = '0.1';
 
 resourcestring
   rsFormCaption = 'Noso RPC Tester';
@@ -130,7 +131,7 @@ End;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-  Caption:= rsFormCaption;
+  Caption:= rsFormCaption + ' v' + cVersion;
   edtServerAddress.Text:= cDefaultServerAddress;
   cbMethod.ItemIndex:= 0;
   ClearInputs;
