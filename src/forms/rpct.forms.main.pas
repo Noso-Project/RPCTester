@@ -220,7 +220,13 @@ var
   RequestBodyStream: TStringStream;
   { No need for the params string list }
 begin
-JSONtoSEND := GetJSONToSend(cbMethod.Items[cbMethod.ItemIndex],edtParams.Text,GetValidID);
+if cbMethod.ItemIndex = 9 then
+   begin
+   JSONtoSEND := GetJSONToSend(cbMethod.Items[cbMethod.ItemIndex],edtParams.Text+
+   ' '+edtamount.Text+' '+edtreference.Text,GetValidID);
+   end
+else
+   JSONtoSEND := GetJSONToSend(cbMethod.Items[cbMethod.ItemIndex],edtParams.Text,GetValidID);
 memLog.Lines.Add('-->');
 memLog.Lines.Add(JSONtoSEND);
 RPCClient := TFPHTTPClient.Create(self);
