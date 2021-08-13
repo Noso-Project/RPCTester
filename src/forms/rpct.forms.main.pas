@@ -54,70 +54,81 @@ implementation
 // change tge method combobox
 procedure TfrmMain.cbMethodChange(Sender: TObject);
 begin
-if cbMethod.ItemIndex = 0 then  //test
-   begin
-   memHelp.Text:='test is the basic request, to check connectivity. testok is received when everithing is ok';
-   edtParams.Visible:=false;
-   end
-else if cbMethod.ItemIndex = 1 then // getaddressbalance
-   begin
-   memHelp.Text:='getaddressbalance returns: balance,incoming,outgoing of the specified addresses';
-   edtParams.TextHint:= 'Params';
-   edtParams.Visible:=true;
-   end
-else if cbMethod.ItemIndex = 2 then // getorderdata
-   begin
-   memHelp.Text := 'getorderinfo returns: timestamp,block,receiver,amount,concept of the specified order';
-   edtParams.TextHint:= 'Params';
-   edtParams.Visible:=true;
-   end
-else if cbMethod.ItemIndex = 3 then // getblockinfo
-   begin
-   edtParams.TextHint:= 'Params';
-   edtParams.Visible:=true;
-   end
-else if cbMethod.ItemIndex = 4 then // getmininginfo
-   begin
-   edtParams.Visible:=false;
-   end
-else if cbMethod.ItemIndex = 5 then // getpendingorders
-   begin
-   edtParams.Visible:=false;
-   end
-else if cbMethod.ItemIndex = 6 then // getmainnetinfo
-   begin
-   edtParams.Visible:=false;
-   end
-else if cbMethod.ItemIndex = 7 then // getblockorders
-   begin
-   edtParams.Visible:=true;
-   end
-else if cbMethod.ItemIndex = 8 then // getnewaddress
-   begin
-   edtParams.TextHint:= 'Params';
-   edtParams.Visible:=true
-   end
-else if cbMethod.ItemIndex = 9 then // sendfunds
-   begin
-   edtParams.TextHint:= 'Recipient';
-   edtParams.Visible:=true;
-   edtAmount.Visible:=true;
-   edtReference.Visible:=true;
-   end
-else
-   begin
-   edtParams.TextHint:= 'Params';
-   edtParams.Visible:=false;
-   edtAmount.Visible:=false;
-   edtReference.Visible:=false;
-   end;
+  case cbMethod.ItemIndex of
+    0:begin  // test
+      memHelp.Text:='test is the basic request, to check connectivity. testok is received when everithing is ok';
+      edtParams.Visible:=false;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+      end;
+    1:begin  // getaddressbalance
+      memHelp.Text:='getaddressbalance returns: balance,incoming,outgoing of the specified addresses';
+      edtParams.TextHint:= 'Params';
+      edtParams.Visible:=true;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+      end;
+    2:begin  // getorderdata
+      memHelp.Text := 'getorderinfo returns: timestamp,block,receiver,amount,concept of the specified order';
+      edtParams.TextHint:= 'Params';
+      edtParams.Visible:=true;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+      end;
+    3:begin  // getblockinfo
+      edtParams.TextHint:= 'Params';
+      edtParams.Visible:=true;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+      end;
+    4:begin  // getmininginfo
+      edtParams.Visible:=true;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+      end;
+    5:begin  // getpendingorders
+      edtParams.Visible:=true;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+      end;
+    6:begin  // getmainnetinfo
+      edtParams.Visible:=true;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+      end;
+    7:begin  // getblockorders
+      edtParams.TextHint:= 'Params';
+      edtParams.Visible:=true;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+      end;
+    8:begin  // getnewaddress
+      edtParams.TextHint:= 'Params';
+      edtParams.Visible:=true;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+      end;
+    9:begin // sendfunds
+      edtParams.TextHint:= 'Recipient';
+      edtParams.Visible:=true;
+      edtAmount.Visible:=true;
+      edtReference.Visible:=true;
+      end;
+    otherwise
+      edtParams.TextHint:= 'Params';
+      edtParams.Visible:=false;
+      edtAmount.Visible:=false;
+      edtReference.Visible:=false;
+  end;
 end;
 
 // Returns a valid JSON ID using timestamp
 function GetValidID():integer;
+const
+  id:integer = 0;
 Begin
-// to be implemented
-result := 1;
+Inc(id);
+Result := id;
 End;
 
 // REtuns a valid JSON string
@@ -128,7 +139,7 @@ var
   counter : integer;
   paramsarray :  TJSONArray;
 Begin
-result := '';
+Result := '';
 paramsarray := TJSONArray.Create;
 if length(JSONparams)>0 then myParams:= JSONparams.Split(' ');
 if JSONMethod = '' Then JSONMethod := 'test';
@@ -144,13 +155,13 @@ NewJSON := TJSONObject.Create;
       NewJSON.Add('id', jsonIDnumber);
       Except on E:Exception do
          begin
-         result := 'ERROR: '+E.Message;
+         Result := 'ERROR: '+E.Message;
          NewJSON.Free;
          exit;
          end;
       end;
    finally
-   result := NewJSON.AsJSON;
+   Result := NewJSON.AsJSON;
    NewJSON.Free;
    end;
 End;
