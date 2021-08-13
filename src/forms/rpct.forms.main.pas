@@ -57,11 +57,32 @@ resourcestring
   rsTextHintAmount = 'Amount';
   rsTextHintReference = 'Reference';
   rsMethodTest =
-    'test is the basic request, to check connectivity. testok is received when everithing is ok';
+    'test is the basic request, to check connectivity. testok is received when'+
+    ' everithing is ok.';
   rsMethodGetAddressBalance =
-    'getaddressbalance returns: balance,incoming,outgoing of the specified addresses';
+    'getaddressbalance returns: balance,incoming,outgoing of the specified'+
+    ' addresses.';
   rsMethodGetOrderData =
-    'getorderinfo returns: timestamp,block,receiver,amount,concept of the specified order';
+    'getorderinfo returns: timestamp, block, receiver, amount, reference of '+
+    'the specified order.';
+  rsMethodGetBlockInfo =
+    'getblockinfo returns: number, timestart, timeend, timetotal, last20, '+
+    'totaltransactions, difficulty, target, solution, lastblockhash, '+
+    'nextdifficulty, miner, feespayed, reward of the specified block.';
+  rsMethodGetMiningInfo =
+    'getmininginfo returns: block, target, difficulty of the block being '+
+    'mined.';
+  rsMethodGetPendingOrders =
+    'getpendingorders returns: a list of pending orders.';
+  rsMethodGetMainnetInfo =
+    'getmainnetinfo returns: lastblock, lastblockhash, headershash, '+
+    'summaryhash, pending, supply.';
+  rsMethodGetBlockOrders =
+    'getblockorders returns: a list of the orders on the specified block.';
+  rsMethodGetNewAddress =
+    'getnewaddress returns: the number of new addresses you''ve specified.';
+  rsMethodSendFunds =
+    'sendfunds returns: the OrderID if the transaction was successful.';
 
 implementation
 
@@ -144,25 +165,25 @@ case cbMethod.ItemIndex of
     memHelp.Text:= rsMethodGetOrderData;
     end;
   3:begin
-    memHelp.Text:= EmptyStr;
+    memHelp.Text:= rsMethodGetBlockInfo;
     end;
   4:begin
-    memHelp.Text:= EmptyStr;
+    memHelp.Text:= rsMethodGetMiningInfo;
     end;
   5:begin
-    memHelp.Text:= EmptyStr;
+    memHelp.Text:= rsMethodGetPendingOrders;
     end;
   6:begin
-    memHelp.Text:= EmptyStr;
+    memHelp.Text:= rsMethodGetMainnetInfo;
     end;
   7:begin
-    memHelp.Text:= EmptyStr;
+    memHelp.Text:= rsMethodGetBlockOrders;
     end;
   8:begin
-    memHelp.Text:= EmptyStr;
+    memHelp.Text:= rsMethodGetNewAddress;
     end;
   9:begin
-    memHelp.Text:= EmptyStr;
+    memHelp.Text:= rsMethodSendFunds;
     end;
 end;
 End;
@@ -257,10 +278,10 @@ JSONResultado := TJSONObject.Create;
 JSONErrorObj  := TJSONObject.Create;
    try
    JSONResultado.Add('jsonrpc', TJSONString.Create('2.0'));
-   JSONErrorObj.Add('code', TJSONIntegerNumber.Create(ErrorCode));
-   JSONErrorObj.Add('message', TJSONString.Create(GetJSONErrorString(ErrorCode)));
+   JSONErrorObj.Add('code', ErrorCode);
+   JSONErrorObj.Add('message', GetJSONErrorString(ErrorCode));
    JSONResultado.Add('error',JSONErrorObj);
-   JSONResultado.Add('id', TJSONIntegerNumber.Create(JSONIdNumber));
+   JSONResultado.Add('id', JSONIdNumber);
    finally
    result := JSONResultado.AsJSON;
    JSONResultado.Free;

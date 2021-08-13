@@ -9,7 +9,6 @@ object frmMain: TfrmMain
   Constraints.MinWidth = 650
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '2.0.10.0'
   object panControlHelp: TPanel
     Left = 0
     Height = 240
@@ -32,18 +31,18 @@ object frmMain: TfrmMain
       TabOrder = 1
       object gbServer: TGroupBox
         Left = 0
-        Height = 43
+        Height = 51
         Top = 0
         Width = 279
         Align = alTop
         AutoSize = True
         Caption = 'Server'
-        ClientHeight = 23
-        ClientWidth = 275
+        ClientHeight = 33
+        ClientWidth = 277
         TabOrder = 0
         object edtServerAddress: TEdit
           Left = 0
-          Height = 23
+          Height = 33
           Top = 0
           Width = 180
           Align = alTop
@@ -57,7 +56,7 @@ object frmMain: TfrmMain
           AnchorSideTop.Control = edtServerAddress
           AnchorSideTop.Side = asrCenter
           Left = 180
-          Height = 23
+          Height = 33
           Top = 0
           Width = 84
           MaxValue = 65535
@@ -68,25 +67,25 @@ object frmMain: TfrmMain
       end
       object gbMethod: TGroupBox
         Left = 0
-        Height = 47
-        Top = 43
+        Height = 51
+        Top = 51
         Width = 279
         Align = alTop
         AutoSize = True
         Caption = 'Method'
-        ClientHeight = 27
-        ClientWidth = 275
+        ClientHeight = 33
+        ClientWidth = 277
         TabOrder = 1
         object cbMethod: TComboBox
           Left = 4
-          Height = 23
+          Height = 29
           Top = 4
-          Width = 267
+          Width = 269
           Align = alTop
           BorderSpacing.Left = 4
           BorderSpacing.Top = 4
           BorderSpacing.Right = 4
-          ItemHeight = 15
+          ItemHeight = 0
           ItemIndex = 0
           Items.Strings = (
             'test'
@@ -108,19 +107,19 @@ object frmMain: TfrmMain
       end
       object gbParams: TGroupBox
         Left = 0
-        Height = 150
-        Top = 90
+        Height = 138
+        Top = 102
         Width = 279
         Align = alClient
         Caption = 'Params'
-        ClientHeight = 130
-        ClientWidth = 275
+        ClientHeight = 120
+        ClientWidth = 277
         TabOrder = 2
         object edtParams: TEdit
           Left = 4
-          Height = 23
+          Height = 33
           Top = 4
-          Width = 267
+          Width = 269
           Align = alTop
           BorderSpacing.Left = 4
           BorderSpacing.Top = 4
@@ -130,9 +129,9 @@ object frmMain: TfrmMain
         end
         object edtAmount: TEdit
           Left = 4
-          Height = 23
+          Height = 33
           Hint = 'Amount'
-          Top = 31
+          Top = 41
           Width = 80
           Align = alTop
           BorderSpacing.Left = 4
@@ -150,9 +149,9 @@ object frmMain: TfrmMain
           AnchorSideTop.Control = edtAmount
           AnchorSideTop.Side = asrCenter
           Left = 88
-          Height = 23
+          Height = 33
           Hint = 'Reference'
-          Top = 31
+          Top = 41
           Width = 183
           BorderSpacing.Top = 4
           BorderSpacing.Right = 4
@@ -163,9 +162,9 @@ object frmMain: TfrmMain
         end
         object btnSend: TButton
           Left = 4
-          Height = 25
-          Top = 101
-          Width = 267
+          Height = 33
+          Top = 83
+          Width = 269
           Align = alBottom
           AutoSize = True
           BorderSpacing.Around = 4
@@ -190,8 +189,8 @@ object frmMain: TfrmMain
       TabOrder = 0
       object memHelp: TMemo
         Left = 4
-        Height = 203
-        Top = 33
+        Height = 205
+        Top = 31
         Width = 363
         Align = alClient
         BorderSpacing.Around = 4
@@ -201,7 +200,7 @@ object frmMain: TfrmMain
       end
       object lblHelp: TLabel
         Left = 8
-        Height = 21
+        Height = 19
         Top = 8
         Width = 363
         Align = alTop
@@ -214,7 +213,6 @@ object frmMain: TfrmMain
         Font.Name = 'Segoe UI'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
-        ParentColor = False
         ParentFont = False
       end
     end
