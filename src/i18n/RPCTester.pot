@@ -1,0 +1,15 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: rpct.forms.main.rsmethodgetaddressbalance
+msgid "getaddressbalance returns: balance,incoming,outgoing of the specified addresses"
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetorderdata
+msgid "getorderinfo returns: timestamp,block,receiver,amount,concept of the specified order"
+msgstr ""
+
+#: rpct.forms.main.rsmethodtest
+msgid "test is the basic request, to check connectivity. testok is received when everithing is ok"
+msgstr ""
+
