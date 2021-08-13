@@ -1,0 +1,11 @@
+{"version":1,"strings":[
+{"hash":94149826,"name":"tfrmmain.gbserver.caption","sourcebytes":[83,101,114,118,101,114],"value":"Server"},
+{"hash":188173683,"name":"tfrmmain.edtserveraddress.texthint","sourcebytes":[83,101,114,118,101,114,32,65,100,100,114,101,115,115],"value":"Server Address"},
+{"hash":87863124,"name":"tfrmmain.gbmethod.caption","sourcebytes":[77,101,116,104,111,100],"value":"Method"},
+{"hash":502948,"name":"tfrmmain.cbmethod.text","sourcebytes":[116,101,115,116],"value":"test"},
+{"hash":90736707,"name":"tfrmmain.gbparams.caption","sourcebytes":[80,97,114,97,109,115],"value":"Params"},
+{"hash":75787348,"name":"tfrmmain.edtamount.hint","sourcebytes":[65,109,111,117,110,116],"value":"Amount"},
+{"hash":214498341,"name":"tfrmmain.edtreference.hint","sourcebytes":[82,101,102,101,114,101,110,99,101],"value":"Reference"},
+{"hash":367684,"name":"tfrmmain.btnsend.caption","sourcebytes":[83,101,110,100],"value":"Send"},
+{"hash":322608,"name":"tfrmmain.lblhelp.caption","sourcebytes":[72,101,108,112],"value":"Help"}
+]}

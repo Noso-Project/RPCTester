@@ -1,6 +1,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: rpct.forms.main.rsformcaption
+msgid "Noso RPC Tester"
+msgstr ""
+
 #: rpct.forms.main.rsmethodgetaddressbalance
 msgid "getaddressbalance returns: balance,incoming,outgoing of the specified addresses"
 msgstr ""
@@ -11,5 +15,63 @@ msgstr ""
 
 #: rpct.forms.main.rsmethodtest
 msgid "test is the basic request, to check connectivity. testok is received when everithing is ok"
+msgstr ""
+
+#: rpct.forms.main.rstexthintamount
+msgctxt "rpct.forms.main.rstexthintamount"
+msgid "Amount"
+msgstr ""
+
+#: rpct.forms.main.rstexthintparams
+msgctxt "rpct.forms.main.rstexthintparams"
+msgid "Params"
+msgstr ""
+
+#: rpct.forms.main.rstexthintrecipient
+msgid "Recipent"
+msgstr ""
+
+#: rpct.forms.main.rstexthintreference
+msgctxt "rpct.forms.main.rstexthintreference"
+msgid "Reference"
+msgstr ""
+
+#: tfrmmain.btnsend.caption
+msgid "Send"
+msgstr ""
+
+#: tfrmmain.cbmethod.text
+msgid "test"
+msgstr ""
+
+#: tfrmmain.edtamount.hint
+msgctxt "tfrmmain.edtamount.hint"
+msgid "Amount"
+msgstr ""
+
+#: tfrmmain.edtreference.hint
+msgctxt "tfrmmain.edtreference.hint"
+msgid "Reference"
+msgstr ""
+
+#: tfrmmain.edtserveraddress.texthint
+msgid "Server Address"
+msgstr ""
+
+#: tfrmmain.gbmethod.caption
+msgid "Method"
+msgstr ""
+
+#: tfrmmain.gbparams.caption
+msgctxt "tfrmmain.gbparams.caption"
+msgid "Params"
+msgstr ""
+
+#: tfrmmain.gbserver.caption
+msgid "Server"
+msgstr ""
+
+#: tfrmmain.lblhelp.caption
+msgid "Help"
 msgstr ""
 

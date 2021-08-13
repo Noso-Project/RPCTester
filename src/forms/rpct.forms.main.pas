@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Spin, fpjson, fphttpclient, RPCT.Utils.ParseRPC;
+  Spin, fpjson, fphttpclient;
 
 type
 
@@ -31,8 +31,10 @@ type
     edtServerPort: TSpinEdit;
     procedure btnSendClick(Sender: TObject);
     procedure cbMethodChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
-
+    procedure ClearInputs;
+    procedure DisplayHelp;
   public
 
   end;
@@ -45,7 +47,15 @@ Function GetJSONErrorString(ErrorCode:integer):string;
 var
   frmMain: TfrmMain;
 
+const
+  cDefaultServerAddress = 'localhost';
+
 resourcestring
+  rsFormCaption = 'Noso RPC Tester';
+  rsTextHintParams = 'Params';
+  rsTextHintRecipient = 'Recipent';
+  rsTextHintAmount = 'Amount';
+  rsTextHintReference = 'Reference';
   rsMethodTest =
     'test is the basic request, to check connectivity. testok is received when everithing is ok';
   rsMethodGetAddressBalance =
@@ -62,29 +72,18 @@ implementation
 // change tge method combobox
 procedure TfrmMain.cbMethodChange(Sender: TObject);
 Begin
-edtParams.Text:= '';
-edtParams.TextHint:= 'Params';
-edtParams.Visible:=false;
-edtAmount.Visible:=false;
-edtReference.Visible:=false;
-
+ClearInputs;
 case cbMethod.ItemIndex of
   0:begin  // test
-    memHelp.Text:= rsMethodTest;
     end;
   1:begin  // getaddressbalance
-    memHelp.Text:= rsMethodGetAddressBalance;
-    edtParams.TextHint:= 'Params';
-    edtParams.Visible:=true;
+    edtParams.Visible:= True;
     end;
   2:begin  // getorderdata
-    memHelp.Text := rsMethodGetOrderData;
-    edtParams.TextHint:= 'Params';
-    edtParams.Visible:=true;
+    edtParams.Visible:= True;
     end;
   3:begin  // getblockinfo
-    edtParams.TextHint:= 'Params';
-    edtParams.Visible:=true;
+    edtParams.Visible:= True;
     end;
   4:begin  // getmininginfo
     end;
@@ -93,18 +92,77 @@ case cbMethod.ItemIndex of
   6:begin  // getmainnetinfo
     end;
   7:begin  // getblockorders
-    edtParams.TextHint:= 'Params';
-    edtParams.Visible:=true;
+    edtParams.Visible:= True;
     end;
   8:begin  // getnewaddress
-    edtParams.TextHint:= 'Params';
-    edtParams.Visible:=true;
+    edtParams.Visible:= True;
     end;
   9:begin // sendfunds
-    edtParams.TextHint:= 'Recipient';
-    edtParams.Visible:=true;
-    edtAmount.Visible:=true;
-    edtReference.Visible:=true;
+    edtParams.TextHint:= rsTextHintRecipient;
+    edtParams.Visible:= True;
+    edtAmount.Visible:= True;
+    edtReference.Visible:= True;
+    end;
+end;
+DisplayHelp;
+End;
+
+procedure TfrmMain.FormCreate(Sender: TObject);
+begin
+  Caption:= rsFormCaption;
+  edtServerAddress.Text:= cDefaultServerAddress;
+  cbMethod.ItemIndex:= 0;
+  ClearInputs;
+  DisplayHelp;
+end;
+
+procedure TfrmMain.ClearInputs;
+begin
+  edtParams.Visible:= False;
+  edtParams.Text:= '';
+  edtParams.TextHint:= rsTextHintParams;
+
+  edtAmount.Visible:= False;
+  edtAmount.Text:= '';
+  edtAmount.TextHint:= rsTextHintAmount;
+
+  edtReference.Visible:= False;
+  edtReference.Text:= '';
+  edtReference.TextHint:= rsTextHintReference;
+end;
+
+procedure TfrmMain.DisplayHelp;
+Begin
+case cbMethod.ItemIndex of
+  0:begin
+    memHelp.Text:= rsMethodTest;
+    end;
+  1:begin
+    memHelp.Text:= rsMethodGetAddressBalance;
+    end;
+  2:begin
+    memHelp.Text:= rsMethodGetOrderData;
+    end;
+  3:begin
+    memHelp.Text:= EmptyStr;
+    end;
+  4:begin
+    memHelp.Text:= EmptyStr;
+    end;
+  5:begin
+    memHelp.Text:= EmptyStr;
+    end;
+  6:begin
+    memHelp.Text:= EmptyStr;
+    end;
+  7:begin
+    memHelp.Text:= EmptyStr;
+    end;
+  8:begin
+    memHelp.Text:= EmptyStr;
+    end;
+  9:begin
+    memHelp.Text:= EmptyStr;
     end;
 end;
 End;

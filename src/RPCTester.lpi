@@ -32,7 +32,7 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="forms;utils"/>
+            <OtherUnitFiles Value="forms"/>
             <UnitOutputDirectory Value="..\bin\lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Parsing>
@@ -73,7 +73,7 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="forms;utils"/>
+            <OtherUnitFiles Value="forms"/>
             <UnitOutputDirectory Value="..\bin\lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
@@ -111,7 +111,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="2">
       <Unit0>
         <Filename Value="RPCTester.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -124,11 +124,6 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RPCT.Forms.Main"/>
       </Unit1>
-      <Unit2>
-        <Filename Value="utils\rpct.utils.parserpc.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="RPCT.Utils.ParseRPC"/>
-      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -139,7 +134,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="forms;utils"/>
+      <OtherUnitFiles Value="forms"/>
       <UnitOutputDirectory Value="..\bin\lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
