@@ -6,15 +6,43 @@ msgid "Noso RPC Tester"
 msgstr ""
 
 #: rpct.forms.main.rsmethodgetaddressbalance
-msgid "getaddressbalance returns: balance,incoming,outgoing of the specified addresses"
+msgid "getaddressbalance returns: balance,incoming,outgoing of the specified addresses."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetblockinfo
+msgid "getblockinfo returns: number, timestart, timeend, timetotal, last20, totaltransactions, difficulty, target, solution, lastblockhash, nextdifficulty, miner, feespayed, reward of the specified block."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetblockorders
+msgid "getblockorders returns: a list of the orders on the specified block."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetmainnetinfo
+msgid "getmainnetinfo returns: lastblock, lastblockhash, headershash, summaryhash, pending, supply."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetmininginfo
+msgid "getmininginfo returns: block, target, difficulty of the block being mined."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetnewaddress
+msgid "getnewaddress returns: the number of new addresses you've specified."
 msgstr ""
 
 #: rpct.forms.main.rsmethodgetorderdata
-msgid "getorderinfo returns: timestamp,block,receiver,amount,concept of the specified order"
+msgid "getorderinfo returns: timestamp, block, receiver, amount, reference of the specified order."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetpendingorders
+msgid "getpendingorders returns: a list of pending orders."
+msgstr ""
+
+#: rpct.forms.main.rsmethodsendfunds
+msgid "sendfunds returns: the OrderID if the transaction was successful."
 msgstr ""
 
 #: rpct.forms.main.rsmethodtest
-msgid "test is the basic request, to check connectivity. testok is received when everithing is ok"
+msgid "test is the basic request, to check connectivity. testok is received when everithing is ok."
 msgstr ""
 
 #: rpct.forms.main.rstexthintamount
