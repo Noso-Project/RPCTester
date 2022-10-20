@@ -1,0 +1,105 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: rpct.forms.main.rsformcaption
+msgid "Noso RPC Tester"
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetaddressbalance
+msgid "getaddressbalance returns: balance,incoming,outgoing of the specified addresses."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetblockinfo
+msgid "getblockinfo returns: number, timestart, timeend, timetotal, last20, totaltransactions, difficulty, target, solution, lastblockhash, nextdifficulty, miner, feespayed, reward of the specified block."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetblockorders
+msgid "getblockorders returns: a list of the orders on the specified block."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetmainnetinfo
+msgid "getmainnetinfo returns: lastblock, lastblockhash, headershash, summaryhash, pending, supply."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetmininginfo
+msgid "getmininginfo returns: block, target, difficulty of the block being mined."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetnewaddress
+msgid "getnewaddress returns: the number of new addresses you've specified."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetorderdata
+msgid "getorderinfo returns: timestamp, block, receiver, amount, reference of the specified order."
+msgstr ""
+
+#: rpct.forms.main.rsmethodgetpendingorders
+msgid "getpendingorders returns: a list of pending orders."
+msgstr ""
+
+#: rpct.forms.main.rsmethodsendfunds
+msgid "sendfunds returns: the OrderID if the transaction was successful."
+msgstr ""
+
+#: rpct.forms.main.rsmethodtest
+msgid "test is the basic request, to check connectivity. testok is received when everithing is ok."
+msgstr ""
+
+#: rpct.forms.main.rstexthintamount
+msgctxt "rpct.forms.main.rstexthintamount"
+msgid "Amount"
+msgstr ""
+
+#: rpct.forms.main.rstexthintparams
+msgctxt "rpct.forms.main.rstexthintparams"
+msgid "Params"
+msgstr ""
+
+#: rpct.forms.main.rstexthintrecipient
+msgid "Recipent"
+msgstr ""
+
+#: rpct.forms.main.rstexthintreference
+msgctxt "rpct.forms.main.rstexthintreference"
+msgid "Reference"
+msgstr ""
+
+#: tfrmmain.btnsend.caption
+msgid "Send"
+msgstr ""
+
+#: tfrmmain.cbmethod.text
+msgid "test"
+msgstr ""
+
+#: tfrmmain.edtamount.hint
+msgctxt "tfrmmain.edtamount.hint"
+msgid "Amount"
+msgstr ""
+
+#: tfrmmain.edtreference.hint
+msgctxt "tfrmmain.edtreference.hint"
+msgid "Reference"
+msgstr ""
+
+#: tfrmmain.edtserveraddress.texthint
+msgid "Server Address"
+msgstr ""
+
+#: tfrmmain.gbmethod.caption
+msgid "Method"
+msgstr ""
+
+#: tfrmmain.gbparams.caption
+msgctxt "tfrmmain.gbparams.caption"
+msgid "Params"
+msgstr ""
+
+#: tfrmmain.gbserver.caption
+msgid "Server"
+msgstr ""
+
+#: tfrmmain.lblhelp.caption
+msgid "Help"
+msgstr ""
+
