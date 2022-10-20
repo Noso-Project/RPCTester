@@ -2,7 +2,7 @@ msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: rpct.forms.main.rsformcaption
-msgid "Noso RPC Tester"
+msgid "Noso RPC Tester v0.1"
 msgstr ""
 
 #: rpct.forms.main.rsmethodgetaddressbalance

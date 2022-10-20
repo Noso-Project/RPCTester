@@ -2,6 +2,12 @@ unit RPCT.Forms.Main;
 
 {$mode objfpc}{$H+}
 
+{
+
+
+}
+
+
 interface
 
 uses
@@ -49,9 +55,10 @@ var
 
 const
   cDefaultServerAddress = 'localhost';
+  AppVersion = '0.1';
 
 resourcestring
-  rsFormCaption = 'Noso RPC Tester';
+  rsFormCaption = 'Noso RPC Tester v'+AppVersion;
   rsTextHintParams = 'Params';
   rsTextHintRecipient = 'Recipent';
   rsTextHintAmount = 'Amount';
